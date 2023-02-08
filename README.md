@@ -1,7 +1,18 @@
 Predictive Maintenance
 ==============================
 
-ML Solution to predict the future failure rates of unscheduled maintenance components and prevent them from failing again.
+### Problem Statement
+Model the err(error), and errf(Filtered_Error) columns for individual 'scanners' to show an expected failure rate of the encoder component. 
+	Scanners are identified into two groups, based on the following criteria and grouping:
+1.	never fail: scanners that never reach the 12 % range for err
+2.	routinely fail: scanners that reach the 12% range for error on a routine basis
+
+Error(err) and Filtered_error(errf) are both float values, they are loosely tied to each other, and are not a 1 for 1 relationship, e.g. a rising err value doesn't mean an errf value will rise, nor the opposite.
+
+Failure is defined as an error that is above 12 % and/or a Filtered_error that is above 0.5 %
+
+Background:  err and errf represent an encoder error rate at which a led light is pulsating into a window barrier.  This barrier, and subsequent calculation, represent the rate of rotation of a component, and the compensated Error and Error Filtered value.
+
 
 Project Organization
 ------------
